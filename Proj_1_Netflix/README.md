@@ -1,3 +1,5 @@
+![6075732](https://github.com/Dhruv19468/Python_Data_analysis_Project/assets/172881376/6732c143-a687-470d-b450-56965395b3e4)
+
 # About The Case Study
 
 ### From company’s perspective:
