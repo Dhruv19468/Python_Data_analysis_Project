@@ -72,3 +72,5 @@ ______________________________________________________________________________
 
 ##### 6. Find After how many days the movie will be added to Netflix after the release of
 the movie (you can consider the recent past data)
+
+Recommendation and insights of the data analysis has been added in the PDF.
