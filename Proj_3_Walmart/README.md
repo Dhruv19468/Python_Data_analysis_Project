@@ -51,10 +51,10 @@ ______________________________________________________________________________
 ______________________________________________________________________________
 ##### 4. How does gender affect the amount spent?
 * From the above calculated CLT answer the following questions.
- * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
- * How is the width of the confidence interval affected by the sample size?
- * Do the confidence intervals for different sample sizes overlap?
- * How does the sample size affect the shape of the distributions of the means?
+  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
+  * How is the width of the confidence interval affected by the sample size?
+  * Do the confidence intervals for different sample sizes overlap?
+  * How does the sample size affect the shape of the distributions of the means?
 
 
 ______________________________________________________________________________
