@@ -4,26 +4,31 @@
 # About The Case Study
 
 ### Problem statement:
-* Walmart is an American multinational retail corporation that operates a chain of
-supercenters, discount departmental stores, and grocery stores in the United States.
-Walmart has more than 100 million customers worldwide.
-* The Management team at Walmart Inc. wants to analyze the customer purchase
-behavior (precisely, purchase amount) against the customer’s gender and the various
-other factors to help the business make better decisions. They want to understand if the
-spending habits differ between male and female customers: Do women spend more on
-Black Friday than men?
+* Strategic Expansion: Yulu's decision to enter the Indian market is a strategic move to
+expand its global footprint. Understanding the demand factors in this new market is
+essential to tailor their services and strategies accordingly.
+* Revenue Recovery: Yulu's recent revenue decline is a pressing concern. By analyzing the
+factors affecting demand for shared electric cycles in the Indian market, they can make
+informed adjustments to regain profitability.
 
 
-* User_ID: User ID
-* Product_ID: Product ID
-* Gender: Sex of User
-* Age: Age in bins
-* Occupation: Occupation
-* City_Category: Category of the City (A,B,C)
-* StayInCurrentCityYears: Number of years stay in current city
-* Marital_Status: Marital Status
-* ProductCategory: Product Category
-* Purchase: Purchase Amount
+Column Profiling:
+* datetime: datetime
+* season: season (1: spring, 2: summer, 3: fall, 4: winter)
+* holiday : whether day is a holiday or not
+* workingday : if day is neither weekend nor holiday is 1, otherwise is 0.
+* weather:
+  * Clear, Few clouds, partly cloudy
+  * Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist
+  * Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
+  * Heavy Rain + Ice Pellets + Thunderstorm + Mist, Snow + Fog
+* temp: temperature in Celsius
+* atemp: feeling temperature in Celsius
+* humidity: humidity
+* windspeed: wind speed
+* casual: count of casual users
+* registered: count of registered users
+* count: count of total rental bikes including both casual and registered
 
 
 #### Analysis on the Data set has been executed on the Jupyter notebook.
@@ -33,58 +38,57 @@ Black Friday than men?
 ## Work Flow on Data Set
 
 ______________________________________________________________________________
-##### 1. Import the dataset and do usual data analysis steps like checking the structure & characteristics of the dataset
-* The data type of all columns in the “customers” table.
-* You can find the number of rows and columns given in the dataset
-* Check for the missing values and find the number of missing values in each column
+##### 1. Define the Problem Statement, Import the required Libraries and perform Exploratory Data Analysis.
+* Examine dataset structure, characteristics, and statistical summary.
+* Identify missing values and perform Imputation using an appropriate method.
+* Identify and remove duplicate records.
+* Analyze the distribution of Numerical & Categorical variables, separately
+* Check for Outliers and deal with them accordingly.
 
 ______________________________________________________________________________
-##### 2. Detect Null values and outliers
-* Find the outliers for every continuous variable in the dataset
-* Remove/clip the data between the 5 percentile and 95 percentile
+##### 2. Try establishing a Relationship between the Dependent and Independent Variables.
 
 ______________________________________________________________________________
-##### 3. Data Exploration
-* What products are different age groups buying?.
-* Is there a relationship between age, marital status, and the amount spent?
-* Are there preferred product categories for different genders?
+##### 3. Check if there any significant difference between the no. of bike rides on Weekdays and Weekends?
+* Formulate Null Hypothesis (H0) and Alternate Hypothesis (H1)
+* Select an appropriate test
+* Set a significance level
+* Calculate test Statistics / p-value
+* Decide whether to accept or reject the Null Hypothesis.
+* Draw inferences & conclusions from the analysis and provide recommendations.
   
 ______________________________________________________________________________
-##### 4. How does gender affect the amount spent?
-* From the above calculated CLT answer the following questions.
-  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
-  * How is the width of the confidence interval affected by the sample size?
-  * Do the confidence intervals for different sample sizes overlap?
-  * How does the sample size affect the shape of the distributions of the means?
-
-
-______________________________________________________________________________
-##### 5. How does Marital_Status affect the amount spent?
-* From the above calculated CLT answer the following questions.
-  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
-  * How is the width of the confidence interval affected by the sample size?
-  * Do the confidence intervals for different sample sizes overlap?
-  * How does the sample size affect the shape of the distributions of the means?
+##### 4. Check if the demand of bicycles on rent is the same for different Weather conditions?
+* Formulate Null Hypothesis (H0) and Alternate Hypothesis (H1)
+* Select an appropriate test
+* Check assumptions of the test
+  * Normality
+  * Equality Variance
+  * Please continue doing the analysis even if some assumptions fail
+* Set a significance level and Calculate the test Statistics / p-value.
+* Decide whether to accept or reject the Null Hypothesis.
+* Draw inferences & conclusions from the analysis and provide recommendations.
 
 ______________________________________________________________________________
-##### 6. How does Age affect the amount spent?
-* From the above calculated CLT answer the following questions.
-  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
-  * How is the width of the confidence interval affected by the sample size?
-  * Do the confidence intervals for different sample sizes overlap?
-  * How does the sample size affect the shape of the distributions of the means?
+##### 5. Check if the demand of bicycles on rent is the same for different Seasons?
+* Formulate Null Hypothesis (H0) and Alternate Hypothesis (H1)
+* Select an appropriate test -
+* Check assumptions of the test
+  * Normality
+  * Equality Variance
+  * Please continue doing the analysis even if some assumptions fail
+* Set a significance level and Calculate the test Statistics / p-value.
+* Decide whether to accept or reject the Null Hypothesis
+* Draw inferences & conclusions from the analysis and provide recommendations.
 
 ______________________________________________________________________________
-##### 7. report Generation
-* Report whether the confidence intervals for the average amount spent by males
-and females (computed using all the data) overlap. How can Walmart leverage
-this conclusion to make changes or improvements?
-* Report whether the confidence intervals for the average amount spent by
-married and unmarried (computed using all the data) overlap. How can Walmart
-leverage this conclusion to make changes or improvements?
-* Report whether the confidence intervals for the average amount spent by
-different age groups (computed using all the data) overlap. How can Walmart
-leverage this conclusion to make changes or improvements?
+##### 6. Check if the Weather conditions are significantly different during different Seasons?
+* Formulate Null Hypothesis (H0) and Alternate Hypothesis (H1) distinct Categories. Encode them accordingly.
+* Select an appropriate test
+* Create a Contingency Table against ‘Weather’ & ‘Season’ columns
+* Set a significance level and Calculate the test Statistics / p-value.
+* Decide whether to accept or reject the Null Hypothesis.
+* Draw inferences & conclusions from the analysis and provide recommendations.
 
 
 Recommendation and insights of the data analysis has been added in the PDF.
