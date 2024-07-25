@@ -58,13 +58,33 @@ ______________________________________________________________________________
 
 
 ______________________________________________________________________________
-##### 5. Check the correlation among different factors
-* Find the correlation between the given features in the table.
+##### 5. How does Marital_Status affect the amount spent?
+* From the above calculated CLT answer the following questions.
+  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
+  * How is the width of the confidence interval affected by the sample size?
+  * Do the confidence intervals for different sample sizes overlap?
+  * How does the sample size affect the shape of the distributions of the means?
 
 ______________________________________________________________________________
-##### 6. Customer profiling and recommendation
-* Make customer profilings for each and every product.
-* Write a detailed recommendation from the analysis that you have done.
+##### 6. How does Age affect the amount spent?
+* From the above calculated CLT answer the following questions.
+  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
+  * How is the width of the confidence interval affected by the sample size?
+  * Do the confidence intervals for different sample sizes overlap?
+  * How does the sample size affect the shape of the distributions of the means?
+
+______________________________________________________________________________
+##### 7. report Generation
+* Report whether the confidence intervals for the average amount spent by males
+and females (computed using all the data) overlap. How can Walmart leverage
+this conclusion to make changes or improvements?
+* Report whether the confidence intervals for the average amount spent by
+married and unmarried (computed using all the data) overlap. How can Walmart
+leverage this conclusion to make changes or improvements?
+* Report whether the confidence intervals for the average amount spent by
+different age groups (computed using all the data) overlap. How can Walmart
+leverage this conclusion to make changes or improvements?
+
 
 Recommendation and insights of the data analysis has been added in the PDF.
 
