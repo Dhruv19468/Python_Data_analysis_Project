@@ -29,6 +29,3 @@ Quantile-based risk segmentation is employed to categorize customers into low, m
 - **Matplotlib/Seaborn** for data visualization.
 - **Scikit-learn** for machine learning (if applied).
 - **Jupyter Notebook** for documenting and sharing the analysis process.
-
-## Video Presentation Link
-https://www.loom.com/share/ee2984a28c0245b9ac314b25458948b4?sid=13e2ad77-af09-45c2-8c24-29be20f57ada
