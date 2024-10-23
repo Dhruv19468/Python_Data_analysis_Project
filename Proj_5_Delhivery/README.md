@@ -3,121 +3,76 @@
 
 # About The Case Study
 
-## Feature Engineering Case study
-### Problem statement:
-* Delhivery aims to establish itself as the premier player in the logistics industry. This
-case study is of paramount importance as it aligns with the company's core objectives
-and operational excellence.
-* It provides a practical framework for understanding and processing data, which is
-integral to their operations. By leveraging data engineering pipelines and data analysis
-techniques, Delhivery can achieve several critical goals.
-* First, it allows them to ensure data integrity and quality by addressing missing values
-and structuring the dataset appropriately.
-* Second, it enables the extraction of valuable features from raw data, which can be
-utilized for building accurate forecasting models.
-* Moreover, it facilitates the identification of patterns, insights, and actionable
-recommendations crucial for optimizing their logistics operations.
-* By conducting hypothesis testing and outlier detection, Delhivery can refine their
-processes and further enhance the quality of service they provide.
+### Project Introduction
 
+This project involves analyzing logistics data for **Delhivery**, India's largest fully integrated logistics services provider. The goal is to process data from Delhivery’s operations to support forecasting models and improve efficiency, profitability, and quality of the business compared to competitors. The data from Delhivery's engineering pipelines will be cleaned, manipulated, and aggregated to prepare it for further analysis and modeling.
 
-### Column Profiling:
-* data - tells whether the data is testing or training data
-* trip_creation_time – Timestamp of trip creation
-* route_schedule_uuid – Unique ID for a particular route schedule
-* route_type – Transportation type
-  * FTL – Full Truck Load: FTL shipments get to the destination sooner, as the truck
-is making no other pickups or drop-offs along the way
-  * Carting: Handling system consisting of small vehicles (carts)
-* trip_uuid - Unique ID given to a particular trip (A trip may include different source and
-destination centers)
-* source_center - Source ID of trip origin
-* source_name - Source Name of trip origin
-* destination_cente – Destination ID
-* destination_name – Destination Name
-* od_start_time – Trip start time
-*  od_end_time – Trip end time
-* start_scan_to_end_scan – Time taken to deliver from source to destination
-* is_cutoff – Unknown field
-* cutoff_factor – Unknown field
-* cutoff_timestamp – Unknown field
-* actual_distance_to_destination – Distance in kms between source and destination
-warehouse
-* actual_time – Actual time taken to complete the delivery (Cumulative)
-* osrm_time – An open-source routing engine time calculator which computes the
-shortest path between points in a given map (Includes usual traffic, distance through
-major and minor roads) and gives the time (Cumulative)
-* osrm_distance – An open-source routing engine which computes the shortest path
-between points in a given map (Includes usual traffic, distance through major and minor
-roads) (Cumulative)
-* factor – Unknown field
-* segment_actual_time – This is a segment time. Time taken by the subset of the
-package delivery
-* segment_osrm_time – This is the OSRM segment time. Time taken by the subset of the
-package delivery
-* segment_osrm_distance – This is the OSRM distance. Distance covered by subset of
-the package delivery
-* segment_factor – Unknown field
+### Project Overview
 
+Delhivery aims to leverage data intelligence for efficient logistics management. The project focuses on cleaning and preparing data related to delivery trips, routing, and performance metrics. The dataset includes detailed information about shipment trips, such as route types, trip durations, distances, and OSRM (Open Source Routing Machine) metrics.
 
-#### Analysis on the Data set has been executed on the Jupyter notebook.
+**Key objectives include:**
+1. **Data cleaning and preprocessing**: Handling missing values, sanitizing data, and addressing outliers.
+2. **Feature engineering**: Extracting meaningful features, aggregating trip-related data, and normalizing or encoding columns.
+3. **Hypothesis testing and analysis**: Comparing different metrics like actual time vs. OSRM time, distance covered, and segment-wise breakdowns.
+4. **Preparation for modeling**: Providing the clean data to the data science team for building predictive models.
 
+### What is Expected in the Project
 
-
-## Work Flow on Data Set
-
-______________________________________________________________________________
-##### 1. Basic data cleaning and exploration:
-* Handle missing values in the data.
-* Converting time columns into pandas datetime.
-* Analyze structure & characteristics of the dataset.
-
-______________________________________________________________________________
-##### 2. Feature Engineering: Extract features from the below fields:
-* Calculate time taken between od_start_time and od_end_time and keep it as a
-feature named od_time_diff_hour. Drop the original columns, if required.
-* Destination Name: Split and extract features out of destination. City-place-code (State)
-* Source Name: Split and extract features out of destination. City-place-code (State)
-* Trip_creation_time: Extract features like month, year, day, etc.
-
-______________________________________________________________________________
-##### 3. In-depth analysis:
-* Grouping and Aggregating at Trip-level
-  * Groups the segment data by the trip_uuid column to focus on
-aggregating data at the trip level.
-  * Apply suitable aggregation functions like first, last, and sum specified in
-the create_trip_dict dictionary to calculate summary statistics for each
-trip.
-* Outlier Detection & Treatment
-  * Find any existing outliers in numerical features.
-  * Visualize the outlier values using Boxplot.
-  * Handle the outliers using the IQR method.
-* Perform one-hot encoding on categorical features.
-* Normalize/ Standardize the numerical features using MinMaxScaler or
-StandardScaler.
+1. **Data Aggregation**: Since delivery trips span multiple rows in the dataset (due to segmented deliveries), it is essential to group and aggregate the rows based on fields like `trip_uuid`, `source_center`, and `destination_center`. Appropriate aggregation methods (e.g., sum, cumsum, first/last values) should be used for numeric and categorical fields.
   
-______________________________________________________________________________
-##### 4. Hypothesis Testing:
-* Perform hypothesis testing / visual analysis between :
-  * actual_time aggregated value and OSRM time aggregated value.
-  * actual_time aggregated value and segment actual time aggregated
-value.
-  * OSRM distance aggregated value and segment OSRM distance
-aggregated value.
-  * OSRM time aggregated value and segment OSRM time aggregated
-value.
-* Note: Aggregated values are the values you’ll get after merging the rows on the
-basis of trip_uuid.
+2. **Feature Extraction**: 
+   - Extract city, state, and other features from `destination_name` and `source_name`.
+   - Extract time features (month, day, year) from `trip_creation_time`.
+   - Calculate the time taken for each trip and compare it with other available metrics.
 
+3. **Hypothesis Testing**: Conduct visual or statistical analysis to compare various metrics, including:
+   - Actual time vs. OSRM time.
+   - Segment-wise times and distances vs. total trip times and distances.
 
-______________________________________________________________________________
-##### 5. Business Insights & Recommendations
-* Patterns observed in the data along with what you can infer from them.
-  * Check from where most orders are coming from (State, Corridor, etc.)
-  * Busiest corridor, avg distance between them, avg time taken, etc.
-* Actionable items for the business.
+4. **Outlier Detection and Handling**: Use the IQR method or visual analysis to detect and manage outliers in numerical variables.
+   
+5. **Data Preprocessing**:
+   - Handle missing values.
+   - One-hot encode categorical variables like `route_type`.
+   - Normalize or standardize numerical variables for modeling.
 
+### Steps to Follow
 
-Recommendation and insights of the data analysis has been added in the PDF.
+1. **Initial Data Cleaning**:
+   - Remove missing and redundant values.
+   - Address missing fields using appropriate imputation techniques.
+   
+2. **Data Exploration**:
+   - Analyze data types and structures.
+   - Use descriptive statistics and visualizations to understand the distribution of key fields.
+
+3. **Row Merging & Aggregation**:
+   - Use `groupby` and aggregation functions to merge delivery segments.
+   - Aggregate fields using sum or first/last values based on the logical requirement.
+
+4. **Feature Engineering**:
+   - Extract new features from date-time fields and categorical columns.
+   - Create duration-based features for comparison and further analysis.
+
+5. **Statistical Hypothesis Testing**:
+   - Compare actual delivery times with OSRM-calculated times using tests like the paired t-test or visual analysis like box plots and scatter plots.
+
+6. **Outlier Detection and Treatment**:
+   - Visualize outliers using box plots.
+   - Handle outliers with techniques like the IQR method.
+
+7. **Data Normalization**:
+   - Normalize numerical features using `MinMaxScaler` or `StandardScaler`.
+
+### Tools Used
+
+1. **Python**: For data cleaning, manipulation, and preprocessing using libraries like `pandas`, `numpy`, `scipy`, and `sklearn`.
+2. **Matplotlib / Seaborn**: For data visualization and hypothesis testing.
+3. **Scikit-learn**: For preprocessing steps like scaling, encoding, and standardization.
+4. **Jupyter Notebooks**: To organize and document the workflow.
+5. **GitHub**: For version control and project documentation.
+
+This README provides an overview and step-by-step guide for the data analysis process, ensuring the data is clean, well-prepared, and suitable for further predictive modeling.
 
 
