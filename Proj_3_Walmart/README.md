@@ -2,88 +2,68 @@
 
 # About The Case Study
 
-### Problem statement:
-* Walmart is an American multinational retail corporation that operates a chain of
-supercenters, discount departmental stores, and grocery stores in the United States.
-Walmart has more than 100 million customers worldwide.
-* The Management team at Walmart Inc. wants to analyze the customer purchase
-behavior (precisely, purchase amount) against the customer’s gender and the various
-other factors to help the business make better decisions. They want to understand if the
-spending habits differ between male and female customers: Do women spend more on
-Black Friday than men?
+### Project Introduction
 
+This project aims to analyze customer purchase behavior at **Walmart**, focusing on gender-based spending patterns during Black Friday. With data from 100 million customers, the goal is to determine if spending habits differ significantly between male and female customers and how other factors like age and marital status influence purchasing behavior. This analysis will help Walmart make data-driven decisions to optimize customer experience and business strategy.
 
-* User_ID: User ID
-* Product_ID: Product ID
-* Gender: Sex of User
-* Age: Age in bins
-* Occupation: Occupation
-* City_Category: Category of the City (A,B,C)
-* StayInCurrentCityYears: Number of years stay in current city
-* Marital_Status: Marital Status
-* ProductCategory: Product Category
-* Purchase: Purchase Amount
+### Project Overview
 
+Walmart wants insights into whether women spend more than men during Black Friday and how other demographics, such as marital status and age, affect purchase behavior. The project involves using transactional data, detecting outliers, calculating confidence intervals, and exploring relationships between purchase amounts and customer demographics. The final goal is to offer actionable insights for improving Walmart's sales strategies.
 
-#### Analysis on the Data set has been executed on the Jupyter notebook.
+**Key objectives include:**
+1. **Data exploration**: Detect null values, outliers, and understand data structure.
+2. **Spending analysis**: Analyze average spending by gender, marital status, and age group.
+3. **Confidence intervals**: Calculate intervals for male and female spending, exploring Central Limit Theorem.
+4. **Recommendations**: Provide insights on improving customer segmentation and sales strategies.
 
+### What is Expected in the Project
 
+1. **Data Cleaning**:
+   - Handle missing values and outliers using visualizations like boxplots and descriptive statistics.
 
-## Work Flow on Data Set
+2. **Spending Behavior Analysis**:
+   - Compute and compare the average spending of male and female customers.
+   - Perform similar analysis for married vs unmarried customers and different age groups.
 
-______________________________________________________________________________
-##### 1. Import the dataset and do usual data analysis steps like checking the structure & characteristics of the dataset
-* The data type of all columns in the “customers” table.
-* You can find the number of rows and columns given in the dataset
-* Check for the missing values and find the number of missing values in each column
+3. **Confidence Interval Calculation**:
+   - Use sample data to calculate confidence intervals for average spending of male and female customers.
+   - Apply the Central Limit Theorem and experiment with different sample sizes and confidence levels (90%, 95%, 99%).
 
-______________________________________________________________________________
-##### 2. Detect Null values and outliers
-* Find the outliers for every continuous variable in the dataset
-* Remove/clip the data between the 5 percentile and 95 percentile
+4. **Comparative Analysis**:
+   - Check if the confidence intervals for male and female spending overlap.
+   - Perform the same analysis for marital status and different age groups, grouped by life stages (e.g., 0-17, 18-25, 26-35, etc.).
 
-______________________________________________________________________________
-##### 3. Data Exploration
-* What products are different age groups buying?.
-* Is there a relationship between age, marital status, and the amount spent?
-* Are there preferred product categories for different genders?
-  
-______________________________________________________________________________
-##### 4. How does gender affect the amount spent?
-* From the above calculated CLT answer the following questions.
-  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
-  * How is the width of the confidence interval affected by the sample size?
-  * Do the confidence intervals for different sample sizes overlap?
-  * How does the sample size affect the shape of the distributions of the means?
+5. **Recommendations**:
+   - Use insights from the analysis to provide recommendations on improving customer segmentation, marketing strategies, and promotional offers.
 
+### Steps to Follow
 
-______________________________________________________________________________
-##### 5. How does Marital_Status affect the amount spent?
-* From the above calculated CLT answer the following questions.
-  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
-  * How is the width of the confidence interval affected by the sample size?
-  * Do the confidence intervals for different sample sizes overlap?
-  * How does the sample size affect the shape of the distributions of the means?
+1. **Initial Data Cleaning**:
+   - Import the dataset and perform data cleaning.
+   - Handle missing values and outliers using methods like `.describe()` and boxplots.
 
-______________________________________________________________________________
-##### 6. How does Age affect the amount spent?
-* From the above calculated CLT answer the following questions.
-  * Is the confidence interval computed using the entire dataset wider for one of the genders? Why is this the case?
-  * How is the width of the confidence interval affected by the sample size?
-  * Do the confidence intervals for different sample sizes overlap?
-  * How does the sample size affect the shape of the distributions of the means?
+2. **Spending Behavior Analysis**:
+   - Calculate the average spending for male and female customers.
+   - Analyze spending behavior for other demographics, such as marital status and age bins.
 
-______________________________________________________________________________
-##### 7. report Generation
-* Report whether the confidence intervals for the average amount spent by males
-and females (computed using all the data) overlap. How can Walmart leverage
-this conclusion to make changes or improvements?
-* Report whether the confidence intervals for the average amount spent by
-married and unmarried (computed using all the data) overlap. How can Walmart
-leverage this conclusion to make changes or improvements?
-* Report whether the confidence intervals for the average amount spent by
-different age groups (computed using all the data) overlap. How can Walmart
-leverage this conclusion to make changes or improvements?
+3. **Confidence Interval Calculation**:
+   - Use the Central Limit Theorem to compute confidence intervals for average spending.
+   - Explore how different confidence levels (90%, 95%, 99%) affect the interval width.
+
+4. **Comparative Analysis**:
+   - Check if confidence intervals for spending overlap across gender, marital status, and age groups.
+
+5. **Recommendations**:
+   - Provide business recommendations based on the findings to help Walmart optimize their marketing and customer engagement strategies.
+
+### Tools Used
+
+1. **Python**: For data cleaning, analysis, and visualization using libraries like `pandas`, `numpy`, and `matplotlib`.
+2. **Scipy/Statsmodels**: For statistical analysis, hypothesis testing, and confidence interval calculations.
+3. **Jupyter Notebooks**: To organize and document the analysis process.
+4. **GitHub**: For version control and project documentation.
+
+This README serves as a guide to understanding the steps involved in analyzing Walmart's customer purchase behavior and deriving actionable insights for business improvements.
 
 
 Recommendation and insights of the data analysis has been added in the PDF.
